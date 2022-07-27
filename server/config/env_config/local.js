@@ -3,7 +3,7 @@ let localConfig = {
         hostname: "localhost",
         app_secret:'Algo-Network',
         port:process.env.PORT || 3001,
-        base_url: "https://44.206.245.7",
+        base_url: "http://44.206.245.7",
         api_version:'v1'
     },
     db:{
