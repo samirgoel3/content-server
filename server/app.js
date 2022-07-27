@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const { ServerApiVersion } = require('mongodb');
 const fileUpload = require('express-fileupload')
+const path = require('path')
 
 
 module.exports = function () {
@@ -44,7 +45,7 @@ module.exports = function () {
             .then((res) => {console.log('#####---> Mongo DB Connected!');})
             .catch(err => {console.log("####----> Mongo Db not Connected" + err);});
 
-        serverApp.use('/uploads', express.static('./uploads'));
+        serverApp.use('/images', express.static(path.join(__dirname, '../images')));
 
         route.init(serverApp)
 
