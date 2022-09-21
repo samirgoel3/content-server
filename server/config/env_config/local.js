@@ -1,6 +1,6 @@
 let localConfig = {
     app:{
-        hostname: "localhost",
+        hostname: "0.0.0.0",
         app_secret:'Algo-Network',
         port:process.env.PORT || 3001,
         base_url: "http://44.206.245.7",
