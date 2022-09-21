@@ -1,6 +1,6 @@
 const express = require('express');
 const route= require('./routes')
-const config = require('./config/env_config/config')
+// const config = require('./config/env_config/config')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -13,8 +13,8 @@ module.exports = function () {
     let serverApp =  express(), create, start;
 
     create = () => {
-        serverApp.set('hostname', config.app.hostname);
-        serverApp.set('port', config.app.port);
+        serverApp.set('hostname', 'localhost');
+        serverApp.set('port', process.env.PORT);
 
         serverApp.use(fileUpload())
 
@@ -35,7 +35,7 @@ module.exports = function () {
 
 
 
-        mongoose.connect(config.db.server_one, {
+        mongoose.connect('mongodb+srv://MainClusture:94QikJPKmTndGaE3@mainclusture.l3f41ws.mongodb.net/?retryWrites=true&w=majority', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             serverApi:ServerApiVersion.v1,
